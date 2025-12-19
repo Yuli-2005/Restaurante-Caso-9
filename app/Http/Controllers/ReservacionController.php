@@ -9,11 +9,11 @@ use Carbon\Carbon;
 class ReservacionController extends Controller
 {
     public function index()
-    {
-       
-        $reservaciones = Reservacion::orderBy('fecha', 'asc')->orderBy('hora', 'asc')->get();
-        return view('reservaciones.index', compact('reservaciones'));
-    }
+{
+    $reservaciones = Reservacion::getReservations(); 
+    
+    return view('reservaciones.index', compact('reservaciones'));
+}
 
     public function create()
     {
@@ -22,20 +22,17 @@ class ReservacionController extends Controller
 
     public function store(Request $request)
     {
-        
         $request->validate([
             'nombre_cliente' => 'required|string|min:3',
             'telefono'       => 'required',
             'numero_personas'=> 'required|integer|min:1',
         ]);
 
-     
         $data = $request->all();
         $data['fecha']  = Carbon::now()->toDateString();
         $data['hora']   = Carbon::now()->toTimeString();
         $data['estado'] = 'confirmada';
 
-        
         Reservacion::create($data);
         
         return redirect()->route('reservaciones.index')->with('success', '¡Reserva anotada con éxito!');
@@ -66,7 +63,6 @@ class ReservacionController extends Controller
 
     public function destroy($id)
     {
-       
         $reservacion = Reservacion::findOrFail($id);
         $reservacion->delete(); 
 
