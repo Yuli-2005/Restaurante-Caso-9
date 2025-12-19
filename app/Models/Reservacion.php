@@ -3,13 +3,16 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes; 
 
 class Reservacion extends Model
 {
-    //  tabla  migración
+    use SoftDeletes; 
+
+    
     protected $table = 'reservaciones';
 
-
+   
     protected $fillable = [
         'nombre_cliente',
         'telefono',
@@ -23,5 +26,6 @@ class Reservacion extends Model
     protected $casts = [
         'fecha' => 'date',
         'numero_personas' => 'integer',
+        'deleted_at' => 'datetime' 
     ];
 }
