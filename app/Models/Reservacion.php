@@ -9,7 +9,7 @@ class Reservacion extends Model
     //  tabla  migración
     protected $table = 'reservaciones';
 
-    // Campos 
+
     protected $fillable = [
         'nombre_cliente',
         'telefono',
@@ -19,7 +19,7 @@ class Reservacion extends Model
         'estado'
     ];
 
-    //manejo profesional de datos 
+    
     protected $casts = [
         'fecha' => 'date',
         'numero_personas' => 'integer',
