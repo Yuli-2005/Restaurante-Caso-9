@@ -64,9 +64,9 @@
                             <div class="mb-5">
                                 <label class="form-label text-primary">Estado de la Reserva</label>
                                 <select name="estado" class="form-select bg-light fw-bold">
-                                    <option value="confirmada" {{ $reservacion->estado == 'confirmada' ? 'selected' : '' }}>🔵 Confirmada</option>
-                                    <option value="ya vinieron" {{ $reservacion->estado == 'ya vinieron' ? 'selected' : '' }}>🟢 Ya vinieron</option>
-                                    <option value="cancelaron" {{ $reservacion->estado == 'cancelaron' ? 'selected' : '' }}>🔴 Cancelaron</option>
+                                    <option value="confirmada" {{ $reservacion->estado == 'confirmada' ? 'selected' : '' }}> Confirmada</option>
+                                    <option value="ya vinieron" {{ $reservacion->estado == 'ya vinieron' ? 'selected' : '' }}> Ya vinieron</option>
+                                    <option value="cancelaron" {{ $reservacion->estado == 'cancelaron' ? 'selected' : '' }}> Cancelaron</option>
                                 </select>
                                 <small class="text-muted mt-1 d-block">Actualice el estado según llegue el cliente.</small>
                             </div>

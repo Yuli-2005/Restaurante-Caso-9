@@ -39,10 +39,10 @@
     <nav class="navbar navbar-custom shadow-sm mb-4">
         <div class="container py-2">
             <div>
-                <span class="navbar-brand mb-0 h1 text-white">🍳 Sabor Casero</span>
+                <span class="navbar-brand mb-0 h1 text-white"> Sabor Casero</span>
                 <p class="small mb-0 opacity-75">¡Hola Don Miguel! Así va el día hoy.</p>
             </div>
-            <a href="{{ route('reservaciones.create') }}" class="btn btn-light btn-add text-danger">＋ Nueva Reserva</a>
+            <a href="{{ route('reservaciones.create') }}" class="btn btn-light btn-add text-danger"> Nueva Reserva</a>
         </div>
     </nav>
 
@@ -60,7 +60,7 @@
                     <div class="card card-reserva shadow-sm h-100 {{ $reserva->estado == 'ya vinieron' ? 'border-vinieron' : ($reserva->estado == 'cancelaron' ? 'border-cancelaron' : 'border-confirmada') }}">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center mb-3">
-                                <div class="icon-circle">👤</div>
+                                <div class="icon-circle"></div>
                                 <span class="badge status-badge {{ $reserva->estado == 'ya vinieron' ? 'bg-success' : ($reserva->estado == 'cancelaron' ? 'bg-danger' : 'bg-primary') }}">
                                     {{ strtoupper($reserva->estado) }}
                                 </span>
@@ -69,10 +69,10 @@
                             <h5 class="card-title fw-bold text-dark">{{ $reserva->nombre_cliente }}</h5>
                             
                             <div class="mt-3 text-secondary">
-                                <p class="mb-1"><strong>📱 Tel:</strong> {{ $reserva->telefono }}</p>
-                                <p class="mb-1"><strong>👥 Personas:</strong> {{ $reserva->numero_personas }}</p>
-                                <p class="mb-1"><strong>⏰ Hora:</strong> {{ $reserva->hora }}</p>
-                                <p class="mb-1"><strong>📅 Fecha:</strong> {{ $reserva->fecha->format('d/m/Y') }}</p>
+                                <p class="mb-1"><strong> Tel:</strong> {{ $reserva->telefono }}</p>
+                                <p class="mb-1"><strong> Personas:</strong> {{ $reserva->numero_personas }}</p>
+                                <p class="mb-1"><strong> Hora:</strong> {{ $reserva->hora }}</p>
+                                <p class="mb-1"><strong> Fecha:</strong> {{ $reserva->fecha->format('d/m/Y') }}</p>
                             </div>
 
                             <hr class="opacity-25">
